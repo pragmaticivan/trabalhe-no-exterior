@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Overrides
+   ========================================================================== */
+
+@import "variables";
+
+/* ==========================================================================
+   Dependencies
+   ========================================================================== */
+
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+body {
+	font-family: $primaryFont;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	background: #eeeeee;
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+@import "animations";
+@import "header";

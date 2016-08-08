@@ -3,6 +3,7 @@ var compass = require('gulp-compass');
 var connect = require('gulp-connect');
 var ghpages = require('gulp-gh-pages');
 var soynode = require('gulp-soynode');
+var livereload = require('gulp-livereload');
 
 gulp.task('connect', function() {
 	connect.server({
@@ -42,17 +43,17 @@ gulp.task('styles', function() {
 			sass: 'src/public/styles',
 			image: 'dist/public/images'
 		}))
-		.pipe(gulp.dest('dist/public/styles'));
+		.pipe(gulp.dest('dist/public/styles'))
+		.pipe(livereload());
 });
 
 gulp.task('soy', function() {
 	return gulp.src('src/**/*.soy')
 		.pipe(soynode({
-			renderSoyWeb: true,
-			locales: ['pt-BR'],
-        	messageFilePathFormat: 'src/public/translations/translations_{LOCALE}.xlf'
+			renderSoyWeb: true
 		}))
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('dist'))
+		.pipe(livereload());
 });
 
 gulp.task('vendor', function() {
@@ -61,6 +62,7 @@ gulp.task('vendor', function() {
 });
 
 gulp.task('watch', function () {
+	livereload.listen();
 	gulp.watch('src/public/downloads/**', ['downloads']);
 	gulp.watch('src/public/images/**', ['images']);
 	gulp.watch('src/public/scripts/**', ['scripts']);

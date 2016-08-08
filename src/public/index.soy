@@ -9,10 +9,31 @@
 {call main.layout}
 	{param content kind="html"}
 		<header class="header">
-			Ivan Test
+			<div class="container header-wrapper">
+				<div class="row">
+					<div class="col-md-8">
+						<h1 class="heading-highlight"><span>T</span>rabalhe no Exterior</h1>
+						<span class="heading-sub-highlight">
+							Guia definitivo de sobrevivência
+						</span>
+					</div>
+					<div class="col-md-4">
+						{call main.topbar}{/call}
+					</div>
+				</div>
+			</div>
 		</header>
 		<main>
-			Ivan Test 3 
+			<div class="container">
+				<div class="row">
+					<div class="choose-your-path">
+						<h2 class="choose-your-path-title">escolha seu destino</h2>
+					</div>
+				</div>
+
+			</div>
+
+			Main Content
 		</main>
 	{/param}
 {/call}
